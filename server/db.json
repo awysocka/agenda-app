@@ -1,0 +1,44 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Workshop 1",
+      "date": "23.06.2021",
+      "time": "11.00-12.00",
+      "localization": "main hall",
+      "teacher": "name surname",
+      "description": "Lorem ipsum lorem lorem",
+      "level": "intermediate"
+    },
+    {
+      "id": 2,
+      "title": "Workshop 2",
+      "date": "23.06.2021",
+      "time": "12.00-13.00",
+      "localization": "main hall",
+      "teacher": "name surname",
+      "description": "Lorem ipsum lorem lorem",
+      "level": "begginers"
+    },
+    {
+      "id": 3,
+      "title": "Workshop 3",
+      "date": "23.06.2021",
+      "time": "14.00-15.00",
+      "localization": "main hall",
+      "teacher": "name surname",
+      "description": "Lorem ipsum lorem lorem",
+      "level": "advanced"
+    },
+    {
+      "id": 4,
+      "title": "Workshop 4",
+      "date": "23.06.2021",
+      "time": "15.00-16.00",
+      "localization": "main hall",
+      "teacher": "name surname",
+      "description": "Lorem ipsum lorem lorem",
+      "level": "all levels"
+    }
+  ]
+}
