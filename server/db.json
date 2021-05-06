@@ -39,6 +39,17 @@
       "teacher": "name surname",
       "description": "Lorem ipsum lorem lorem",
       "level": "all levels"
+    },
+    {
+      "id": 5,
+      "title": "Workshop 5",
+      "date": "23.06.2021",
+      "time": "15.00-16.00",
+      "localization": "main hall",
+      "teacher": "name surname",
+      "description": "Lorem ipsum lorem lorem",
+      "level": "all levels"
     }
-  ]
+  ],
+  "config": { "title": "Polish festival" }
 }
