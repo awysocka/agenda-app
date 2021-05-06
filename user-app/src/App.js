@@ -2,7 +2,9 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import EventList from './components/EventList/EventList';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer'
 import { getData } from './api';
+
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -17,6 +19,7 @@ function App() {
     <div className='App'>
       <Header title={title} />
       <EventList events={events} />
+      <Footer />
     </div>
   );
 }

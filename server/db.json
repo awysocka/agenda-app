@@ -51,5 +51,7 @@
       "level": "all levels"
     }
   ],
-  "config": { "title": "Polish festival" }
+  "config": { 
+    "title": "Polish festival"
+  }
 }
