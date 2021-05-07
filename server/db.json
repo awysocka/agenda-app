@@ -5,7 +5,7 @@
       "title": "Workshop 1",
       "date": "23.06.2021",
       "time": "11.00-12.00",
-      "localization": "main hall",
+      "location": "main hall",
       "teacher": "name surname",
       "description": "Lorem ipsum lorem lorem",
       "level": "intermediate"
@@ -15,7 +15,7 @@
       "title": "Workshop 2",
       "date": "23.06.2021",
       "time": "12.00-13.00",
-      "localization": "main hall",
+      "location": "main hall",
       "teacher": "name surname",
       "description": "Lorem ipsum lorem lorem",
       "level": "begginers"
@@ -25,7 +25,7 @@
       "title": "Workshop 3",
       "date": "23.06.2021",
       "time": "14.00-15.00",
-      "localization": "main hall",
+      "location": "main hall",
       "teacher": "name surname",
       "description": "Lorem ipsum lorem lorem",
       "level": "advanced"
@@ -35,7 +35,7 @@
       "title": "Workshop 4",
       "date": "23.06.2021",
       "time": "15.00-16.00",
-      "localization": "main hall",
+      "location": "main hall",
       "teacher": "name surname",
       "description": "Lorem ipsum lorem lorem",
       "level": "all levels"
@@ -45,13 +45,13 @@
       "title": "Workshop 5",
       "date": "23.06.2021",
       "time": "15.00-16.00",
-      "localization": "main hall",
+      "location": "main hall",
       "teacher": "name surname",
       "description": "Lorem ipsum lorem lorem",
       "level": "all levels"
     }
   ],
-  "config": { 
+  "config": {
     "title": "Polish festival"
   }
 }
