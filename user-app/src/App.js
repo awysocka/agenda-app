@@ -8,17 +8,26 @@ import { getData } from './api';
 function App() {
   const [events, setEvents] = useState([]);
   const [title, setTitle] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getData('/config').then((data) => setTitle(data.title));
-    getData('/events').then((data) => setEvents(data));
+    Promise.all([
+      getData('/config').then((data) => setTitle(data.title)),
+      getData('/events').then((data) => setEvents(data)),
+    ]).then(() => setIsLoading(false));
   }, []);
 
   return (
-    <div className='App'>
-      <Header title={title} />
-      <Agenda events={events} />
-      <Footer />
+    <div>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <div className='App'>
+          <Header title={title} />
+          <Agenda events={events} />
+          <Footer />
+        </div>
+      )}
     </div>
   );
 }
