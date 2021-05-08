@@ -10,8 +10,6 @@ const Event = ({ event: { location, title, teacher } }) => {
   );
 };
 
-export default Event;
-
 Event.propTypes = {
   event: PropTypes.shape({
     location: PropTypes.string,
@@ -19,3 +17,5 @@ Event.propTypes = {
     teacher: PropTypes.string,
   }),
 };
+
+export default Event;

@@ -11,9 +11,9 @@ const EventsTimeGroup = ({ time, events }) => {
   );
 };
 
-export default EventsTimeGroup;
-
 EventsTimeGroup.propTypes = {
   time: PropTypes.string.isRequired,
   events: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
+export default EventsTimeGroup;

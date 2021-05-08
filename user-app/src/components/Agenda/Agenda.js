@@ -14,8 +14,8 @@ const Agenda = ({ events }) => {
   );
 };
 
-export default Agenda;
-
 Agenda.propTypes = {
   events: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
+export default Agenda;

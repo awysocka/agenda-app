@@ -11,8 +11,8 @@ const EventsList = ({ events }) => {
   );
 };
 
-export default EventsList;
-
 EventsList.propTypes = {
   events: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
+export default EventsList;
