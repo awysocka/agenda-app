@@ -4,22 +4,25 @@ import Agenda from './components/Agenda/Agenda';
 import Select from './components/Select/Select';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import TagsList from './components/TagsList/TagsList';
 import { getData } from './api';
 import {removeDuplicates} from './helpers/removeDuplicates'
 
 function App() {
   const [events, setEvents] = useState([]);
-  const [title, setTitle] = useState('');
+  const [config, setConfig] = useState({});
+  const [tags, setTags] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedDay, setSelectedDay] = useState('');
 
   useEffect(() => {
     Promise.all([
-      getData('/config').then((data) => setTitle(data.title)),
+      getData('/config').then((data) => setConfig(data)),
       getData('/events').then((data) => {
         setEvents(data);
         setSelectedDay(data[0]?.date);
       }),
+      getData('/tags').then((data) => setTags(data))
     ]).then(() => setIsLoading(false));
   }, []);
 
@@ -35,8 +38,9 @@ function App() {
         <div>Loading...</div>
       ) : (
         <div className='App'>
-          <Header title={title} />
+          <Header title={config.title} />
           <Select onChange={setSelectedDay} value={selectedDay} options={days} />
+          <TagsList tagsTitle={config.tagsTitle} tags={tags}/>
           <Agenda events={eventsFilteredByDay} />
           <Footer />
         </div>

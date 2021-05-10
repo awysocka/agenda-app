@@ -52,6 +52,25 @@
     }
   ],
   "config": {
-    "title": "Polish festival"
-  }
+    "title": "Polish festival",
+    "tagsTitle": "Levels" 
+  },
+  "tags": [
+    {
+      "name": "begginers",
+      "color": "#06D6A0"
+    },
+    {
+      "name": "intermediate",
+      "color": "#FFD166"
+    },
+    {
+      "name": "advanced",
+      "color": "#EF476F"
+    },
+    {
+      "name": "all levels",
+      "color": "#118AB2"
+    }
+  ]
 }

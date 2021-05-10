@@ -1,0 +1,22 @@
+.tag-color {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+}
+
+.tags-list {
+  display: flex;
+}
+
+.tags-list-element {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.tags-list-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
