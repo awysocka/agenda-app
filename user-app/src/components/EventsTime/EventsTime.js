@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-const EventTime = ({ time }) => {
+const EventsTime = ({ time }) => {
   return <p>{time}</p>;
 };
 
-EventTime.propTypes = {
+EventsTime.propTypes = {
   time: PropTypes.string.isRequired,
 };
 
-export default EventTime;
+export default EventsTime;

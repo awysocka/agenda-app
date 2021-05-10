@@ -5,7 +5,7 @@ import Select from './components/Select/Select';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import TagsList from './components/TagsList/TagsList';
-import { getData } from './api';
+import { getData } from './api/api';
 import {removeDuplicates} from './helpers/removeDuplicates'
 
 function App() {

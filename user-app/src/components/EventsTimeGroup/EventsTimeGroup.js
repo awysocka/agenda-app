@@ -1,11 +1,11 @@
-import EventTime from '../EventTime/EventTime';
+import EventsTime from '../EventsTime/EventsTime';
 import EventsList from '../EventsList/EventsList';
 import PropTypes from 'prop-types';
 
 const EventsTimeGroup = ({ time, events }) => {
   return (
     <div>
-      <EventTime time={time} />
+      <EventsTime time={time} />
       <EventsList events={events} />
     </div>
   );
