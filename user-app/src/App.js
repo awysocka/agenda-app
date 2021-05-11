@@ -41,7 +41,7 @@ function App() {
           <Header title={config.title} />
           <Select onChange={setSelectedDay} value={selectedDay} options={days} />
           <TagsList tagsTitle={config.tagsTitle} tags={tags}/>
-          <Agenda events={eventsFilteredByDay} />
+          <Agenda events={eventsFilteredByDay} tagTitle={config.tagTitle} />
           <Footer />
         </div>
       )}

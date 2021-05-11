@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import Event from '../Event/Event';
 
-const EventsList = ({ events }) => {
+const EventsList = ({ events, tagTitle }) => {
   return (
     <ul>
       {events?.map((event) => (
-        <Event key={event.id} event={event} />
+        <Event key={event.id} event={event} tagTitle={tagTitle} />
       ))}
     </ul>
   );
