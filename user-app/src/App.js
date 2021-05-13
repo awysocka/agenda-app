@@ -1,12 +1,14 @@
-import './App.css';
 import React, { useState, useEffect } from 'react';
+import { ThemeProvider } from 'styled-components';
 import Agenda from './components/Agenda/Agenda';
 import Select from './components/Select/Select';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import TagsList from './components/TagsList/TagsList';
 import { getData } from './api/api';
-import {removeDuplicates} from './helpers/removeDuplicates'
+import { removeDuplicates } from './helpers/removeDuplicates';
+import GlobalStyle from './styles/GlobalStyles';
+import { theme } from './styles/theme';
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -22,7 +24,7 @@ function App() {
         setEvents(data);
         setSelectedDay(data[0]?.date);
       }),
-      getData('/tags').then((data) => setTags(data))
+      getData('/tags').then((data) => setTags(data)),
     ]).then(() => setIsLoading(false));
   }, []);
 
@@ -33,19 +35,22 @@ function App() {
   });
 
   return (
-    <div>
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <div className='App'>
-          <Header title={config.title} />
-          <Select onChange={setSelectedDay} value={selectedDay} options={days} />
-          <TagsList tagsTitle={config.tagsTitle} tags={tags}/>
-          <Agenda events={eventsFilteredByDay} tagTitle={config.tagTitle} />
-          <Footer />
-        </div>
-      )}
-    </div>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyle />
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : (
+          <div>
+            <Header title={config.title} />
+            <Select onChange={setSelectedDay} value={selectedDay} options={days} />
+            <TagsList tagsTitle={config.tagsTitle} tags={tags} />
+            <Agenda events={eventsFilteredByDay} tagTitle={config.tagTitle} />
+            <Footer />
+          </div>
+        )}
+      </>
+    </ThemeProvider>
   );
 }
 
