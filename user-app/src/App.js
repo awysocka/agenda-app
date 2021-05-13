@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Agenda from './components/Agenda/Agenda';
-import Select from './components/Select/Select';
+import DaySelect from './components/DaySelect/DaySelect';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import TagsList from './components/TagsList/TagsList';
@@ -15,7 +15,7 @@ function App() {
   const [config, setConfig] = useState({});
   const [tags, setTags] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedDay, setSelectedDay] = useState('');
+  const [selectedDay, setSelectedDay] = useState();
 
   useEffect(() => {
     Promise.all([
@@ -43,7 +43,7 @@ function App() {
         ) : (
           <div>
             <Header title={config.title} />
-            <Select onChange={setSelectedDay} value={selectedDay} options={days} />
+            <DaySelect onChange={setSelectedDay} value={selectedDay} options={days} />
             <TagsList tagsTitle={config.tagsTitle} tags={tags} />
             <Agenda events={eventsFilteredByDay} tagTitle={config.tagTitle} />
             <Footer />
