@@ -32,6 +32,10 @@ const GlobalStyle = createGlobalStyle`
     ul {
         list-style-type: none;
     }
+
+    a {
+        text-decoration: none;
+    }
 `;
 
 export default GlobalStyle;

@@ -4,6 +4,8 @@ import { IoChevronUpOutline } from 'react-icons/io5';
 import PropTypes from 'prop-types';
 import './Event.css';
 
+
+
 const Event = ({ event: { location, title, teacher, description, tag, prerequisites }, tagTitle }) => {
   const [open, setOpen] = useState(false);
   const [eventDetailsHeight, setEventDetailsHeight] = useState('0px');
