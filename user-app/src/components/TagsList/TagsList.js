@@ -1,19 +1,41 @@
 import PropTypes from 'prop-types';
-import './TagsList.css';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+const StyledTagsList = styled.ul`
+  display: flex;
+`;
+
+const TagsListElement = styled.li`
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+`;
+
+const TagColor = styled.span`
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+`;
 
 const TagsList = ({ tagsTitle, tags }) => {
   return (
-    <div className='tags-list-wrapper'>
+    <Wrapper>
       <p>{tagsTitle}:</p>
-      <ul className='tags-list'>
+      <StyledTagsList>
         {tags.map((tag) => (
-          <li key={tag.name} className='tags-list-element'>
-            <span className='tag-color' style={{ backgroundColor: `${tag.color}` }}></span>
+          <TagsListElement key={tag.name}>
+            <TagColor style={{ backgroundColor: `${tag.color}` }}></TagColor>
             <p>{tag.name}</p>
-          </li>
+          </TagsListElement>
         ))}
-      </ul>
-    </div>
+      </StyledTagsList>
+    </Wrapper>
   );
 };
 
