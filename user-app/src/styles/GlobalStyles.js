@@ -17,12 +17,14 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        min-height: 100vh;
         font-family: 'Roboto', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         font-size: 1.6rem;
-        min-height: 100vh;
-        background-color: ${({theme}) => theme.colors.lightGrey};
+        font-weight: 400;
+        background-color: ${({ theme }) => theme.colors.lightGrey};
+        color: ${({ theme }) => theme.colors.darkGrey};
     }
 
     button {

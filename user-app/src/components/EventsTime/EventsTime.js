@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const StyledEventsTime = styled.p`
+  margin: 0 5px;
+`;
 
 const EventsTime = ({ time }) => {
-  return <p>{time}</p>;
+  return <StyledEventsTime>{time}</StyledEventsTime>;
 };
 
 EventsTime.propTypes = {

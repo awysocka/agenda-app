@@ -1,12 +1,13 @@
-import EventsTime from '../EventsTime/EventsTime';
-import EventsList from '../EventsList/EventsList';
 import PropTypes from 'prop-types';
 
-const EventsTimeGroup = ({ time, events, tagTitle }) => {
+import EventsTime from '../EventsTime/EventsTime';
+import EventsList from '../EventsList/EventsList';
+
+const EventsTimeGroup = ({ time, events, tagTitle, tags }) => {
   return (
     <div>
       <EventsTime time={time} />
-      <EventsList events={events} tagTitle={tagTitle}/>
+      <EventsList events={events} tagTitle={tagTitle} tags={tags} />
     </div>
   );
 };
@@ -14,6 +15,8 @@ const EventsTimeGroup = ({ time, events, tagTitle }) => {
 EventsTimeGroup.propTypes = {
   time: PropTypes.string.isRequired,
   events: PropTypes.arrayOf(PropTypes.object).isRequired,
+  tagTitle: PropTypes.string,
+  tags: PropTypes.PropTypes.arrayOf(PropTypes.object),
 };
 
 export default EventsTimeGroup;
