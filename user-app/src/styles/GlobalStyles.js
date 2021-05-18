@@ -38,6 +38,10 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
     }
+
+    p {
+        line-height: 1.6;
+    }
 `;
 
 export default GlobalStyle;

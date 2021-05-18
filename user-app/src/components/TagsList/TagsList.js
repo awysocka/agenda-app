@@ -3,17 +3,30 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+
+  @media ${({ theme }) => theme.device.tablet} {
+    align-items: center;
+  }
 `;
+
 const StyledTagsList = styled.ul`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 const TagsListElement = styled.li`
   display: flex;
   align-items: center;
   margin-left: 10px;
+  line-height: 1.6;
+  min-width: 120px;
+
+  @media ${({ theme }) => theme.device.tablet} {
+    min-width: auto;
+  }
 `;
 
 const TagColor = styled.span`

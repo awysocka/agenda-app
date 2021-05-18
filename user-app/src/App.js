@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import Agenda from './components/Agenda/Agenda';
 import DaySelect from './components/DaySelect/DaySelect';
 import Header from './components/Header/Header';
@@ -9,6 +9,26 @@ import { getData } from './api/api';
 import { removeDuplicates } from './helpers/removeDuplicates';
 import GlobalStyle from './styles/GlobalStyles';
 import { theme } from './styles/theme';
+
+const Main = styled.main`
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 15px 10px;
+  margin-bottom: 40px;
+
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 15px 36px;
+    margin-bottom: 60px;
+  }
+`;
+
+const AgendaInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 5px 0px;
+`;
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -43,9 +63,13 @@ function App() {
         ) : (
           <div>
             <Header title={config.title} />
-            <DaySelect onChange={setSelectedDay} value={selectedDay} options={days} />
-            <TagsList tagsTitle={config.tagsTitle} tags={tags} />
-            <Agenda events={eventsFilteredByDay} tagTitle={config.tagTitle} tags={tags} />
+            <Main>
+              <AgendaInfo>
+                <DaySelect onChange={setSelectedDay} value={selectedDay} options={days} />
+                <TagsList tagsTitle={config.tagsTitle} tags={tags} />
+              </AgendaInfo>
+              <Agenda events={eventsFilteredByDay} tagTitle={config.tagTitle} tags={tags} />
+            </Main>
             <Footer />
           </div>
         )}

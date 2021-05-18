@@ -7,8 +7,13 @@ const Container = styled.div`
   height: 80px;
   display: flex;
   align-items: center;
-  padding: 15px 36px;
-  margin-bottom: 88px;
+  padding: 15px;
+  margin-bottom: 40px;
+
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 15px 36px;
+    margin-bottom: 60px;
+  }
 `;
 
 const Title = styled.h1`

@@ -12,6 +12,22 @@ const Button = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.white};
 `;
 
+const ArrowDown = styled(IoChevronDownOutline)`
+  @media ${({ theme }) => theme.device.touchable} {
+    &:hover {
+      color: ${({ theme }) => theme.colors.grey};
+    }
+  }
+`;
+
+const ArrowUp = styled(IoChevronUpOutline)`
+  @media ${({ theme }) => theme.device.touchable} {
+    &:hover {
+      color: ${({ theme }) => theme.colors.grey};
+    }
+  }
+`;
+
 const ExpandableElement = ({ header, children }) => {
   const [active, setActive] = useState(false);
 
@@ -22,7 +38,7 @@ const ExpandableElement = ({ header, children }) => {
     <>
       <Button onClick={toggleDetails}>
         {header}
-        {active ? <IoChevronUpOutline /> : <IoChevronDownOutline />}
+        {active ? <ArrowUp /> : <ArrowDown />}
       </Button>
       {active && <div>{children}</div>}
     </>
