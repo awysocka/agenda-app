@@ -9,9 +9,9 @@ The main goal of this project is to learn React.
 
 ## screenshots
 * Workshops are grouped by day(choose using select element) and time. Each workshop is assigned a tag (level).
-![](https://github.com/awysocka/agenda-app/readme-img/Dashboard.jpg)
+![dashboard](https://github.com/awysocka/agenda-app/blob/master/readme-img/Dashboard.jpg)
 * When element is open more information is showing.
-![](https://github.com/awysocka/agenda-app/readme-img/Open-elements.jpg)
+![shows open elements](https://github.com/awysocka/agenda-app/blob/master/readme-img/Open-elements.jpg)
 
 ## setup
 From your command line:
