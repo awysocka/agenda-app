@@ -30,6 +30,18 @@ const customSelectStyle = (theme) => {
       ...styles,
       color: theme.colors.darkGrey,
     }),
+    control: (styles, { isFocused}) => ({
+      ...styles,
+      cursor: 'pointer',
+      borderColor: isFocused ? theme.colors.grey : theme.colors.lightGrey,
+      boxShadow: isFocused ? theme.colors.grey : theme.colors.lightGrey,
+      
+      ':hover': {
+        ...styles[':hover'],
+        borderColor: theme.colors.grey,
+        boxShadow: theme.colors.grey,
+      },
+    }),
     option: (styles, { isFocused, isSelected }) => ({
       ...styles,
       backgroundColor: isSelected
