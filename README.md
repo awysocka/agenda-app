@@ -39,4 +39,4 @@ $ npm start
 
 ## status
 * in progress
-* in the future I have plan to add admin-app to manage the presanted data
+* in the future I have plan to add admin-app to manage the presented data
