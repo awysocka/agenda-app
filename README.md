@@ -4,7 +4,6 @@ The main goal of this project is to learn React.
 
 ## technologies
 * This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-* Backend server is mocked with [json-server](https://github.com/typicode/json-server)
 * Styled with [Styled Components](https://styled-components.com/)
 
 ## screenshots
@@ -23,10 +22,8 @@ $ git clone https://github.com/awysocka/agenda-app.git
 # Go into the repository
 $ cd agenda-app
 
-# Go into server folder
-$ cd server
-# Run mocked backend server
-$ json-server --watch db.json
+# Run server from this repository 
+https://github.com/awysocka/agenda-app-backend
 
 # Go into user-app folder
 $ cd ../user-app
@@ -39,4 +36,4 @@ $ npm start
 
 ## status
 * in progress
-* in the future I have plan to add admin-app to manage the presented data
+* in the future I have plan to add admin dashboard to manage the presented data
