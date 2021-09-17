@@ -5,6 +5,7 @@ The main goal of this project is to learn React.
 ## technologies
 * This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 * Styled with [Styled Components](https://styled-components.com/)
+* [React Hook Form](https://react-hook-form.com/)
 
 ## screenshots
 * Workshops are grouped by day (choose using select element) and time. Each workshop can be assigned a tag (level).
@@ -17,16 +18,13 @@ The main goal of this project is to learn React.
 From your command line:
 
 ```bash
+# Run server from this repository 
+https://github.com/awysocka/agenda-app-backend
+
 # Clone this repository
 $ git clone https://github.com/awysocka/agenda-app.git
 # Go into the repository
 $ cd agenda-app
-
-# Run server from this repository 
-https://github.com/awysocka/agenda-app-backend
-
-# Go into user-app folder
-$ cd ../user-app
 # Instal dependencies 
 $ npm install
 # Run the project 
