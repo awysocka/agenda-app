@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import React, { useState, useEffect } from 'react';
-import { getData } from '../../api/api';
+import { getData, postData } from '../../api/api';
 import FormField from '../FormField/FormField';
 import { Main, Form, SubmitButton, Error } from './EventForm.styles';
 
@@ -10,6 +10,7 @@ const EventForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    control,
   } = useForm({ mode: 'onTouched', reValidateMode: 'onChange' });
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const EventForm = () => {
     return { label: tag.name, value: tag.name };
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => postData('/events', data);
 
   return (
     <Main>
@@ -36,7 +37,7 @@ const EventForm = () => {
         {errors.date && <Error>{errors.date.message}</Error>}
         <FormField
           name='time'
-          type='time'
+          type='text'
           label='Time'
           register={register}
           registerOptions={{ required: 'This is required' }}
@@ -64,10 +65,10 @@ const EventForm = () => {
         <FormField
           name='tag'
           label='Tag'
-          register={register}
           isSelect={true}
           options={tagsList}
           placeholder='select a tag'
+          control={control}
         />
         <SubmitButton type='submit' value='Save' />
       </Form>

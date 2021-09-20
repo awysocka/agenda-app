@@ -1,5 +1,16 @@
-const baseUrl = "http://localhost:3003"
+const BASE_URL = 'http://localhost:3003';
 
 export const getData = (URL) => {
-  return fetch(baseUrl + URL).then((response) => response.json());
+  return fetch(BASE_URL + URL).then((response) => response.json());
+};
+
+export const postData = (URL, data) => {
+  return fetch(BASE_URL + URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  .then((response) => response.json()).then(data => console.log(data))
 };

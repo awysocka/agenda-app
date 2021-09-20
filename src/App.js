@@ -9,6 +9,7 @@ import { getData } from './api/api';
 import { removeDuplicates } from './helpers/removeDuplicates';
 import GlobalStyle from './styles/GlobalStyles';
 import { theme } from './styles/theme';
+import AdminPanel from './views/AdminPanel'
 
 const Main = styled.main`
   max-width: 1024px;
@@ -71,6 +72,7 @@ function App() {
               <Agenda events={eventsFilteredByDay} tagTitle={config.tagTitle} tags={tags} />
             </Main>
             <Footer />
+            <AdminPanel />
           </div>
         )}
       </>

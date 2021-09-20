@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Controller } from 'react-hook-form';
 import { ThemeContext } from 'styled-components';
 import Select, { components } from 'react-select';
 import { IoChevronDownOutline } from 'react-icons/io5';
@@ -54,16 +55,25 @@ const customSelectStyle = (theme) => {
   };
 };
 
-const SelectElement = ({ options, placeholder }) => {
+const SelectElement = ({ options, placeholder, control, name }) => {
   const themeContext = useContext(ThemeContext);
   const customStyles = customSelectStyle(themeContext);
 
   return (
-    <Select
-      options={options}
-      placeholder={placeholder}
-      styles={customStyles}
-      components={{ DropdownIndicator }}
+    <Controller
+      control={control}
+      name={name}
+      render={({ field: { onChange, value, ref } }) => (
+        <Select
+          inputRef={ref}
+          options={options}
+          value={options.find((option) => option.value === value)}
+          placeholder={placeholder}
+          styles={customStyles}
+          components={{ DropdownIndicator }}
+          onChange={(val) => onChange(val.value)}
+        />
+      )}
     />
   );
 };

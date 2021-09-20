@@ -11,13 +11,20 @@ const FormField = ({
   isSelect = false,
   options,
   placeholder,
+  control,
 }) => (
   <>
     <Label htmlFor={name}>{label}</Label>
     {isTextarea ? (
       <Textarea id={name} {...register(name, registerOptions)} />
     ) : isSelect ? (
-      <SelectElement options={options} placeholder={placeholder} />
+      <SelectElement
+        name={name}
+        options={options}
+        placeholder={placeholder}
+        id={name}
+        control={control}
+      />
     ) : (
       <Input type={type} id={name} {...register(name, registerOptions)} />
     )}
