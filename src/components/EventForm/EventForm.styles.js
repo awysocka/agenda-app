@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Form = styled.form`
   background: ${({ theme }) => theme.colors.white};
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 20px 40px;
   border-radius: 5px;
   width: 100%;
@@ -33,15 +33,7 @@ export const SubmitButton = styled.input`
   }
 `;
 
-export const Main = styled.main`
-  max-width: 1024px;
-  margin: 0 auto 40px;
-  padding: 15px 10px;
 
-  @media ${({ theme }) => theme.device.tablet} {
-    padding: 15px 36px;
-  }
-`;
 
 export const Error = styled.p`
   color: red;

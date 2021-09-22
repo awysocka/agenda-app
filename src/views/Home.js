@@ -12,12 +12,10 @@ import { removeDuplicates } from '../helpers/removeDuplicates';
 const Main = styled.main`
   max-width: 1024px;
   margin: 0 auto;
-  padding: 15px 10px;
-  margin-bottom: 40px;
+  padding: 150px 10px 40px;
 
   @media ${({ theme }) => theme.device.tablet} {
-    padding: 15px 36px;
-    margin-bottom: 60px;
+    padding: 150px 36px 60px;
   }
 `
 

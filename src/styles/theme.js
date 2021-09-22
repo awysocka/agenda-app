@@ -1,5 +1,6 @@
 const breakpoints = {
   tablet: '461px',
+  desktop: '1024px'
 };
 
 export const theme = {
@@ -14,6 +15,7 @@ export const theme = {
   },
   device: {
     tablet: `(min-width: ${breakpoints.tablet})`,
+    desktop: `(min-width: ${breakpoints.desktop})`,
     touchable: `(hover)`,
   },
 };

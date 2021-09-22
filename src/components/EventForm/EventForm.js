@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import React, { useState, useEffect } from 'react';
 import { getData, postData } from '../../api/api';
 import FormField from '../FormField/FormField';
-import { Main, Form, SubmitButton, Error } from './EventForm.styles';
+import { Form, SubmitButton, Error } from './EventForm.styles';
 
 const EventForm = () => {
   const [tags, setTags] = useState([]);
@@ -24,7 +24,6 @@ const EventForm = () => {
   const onSubmit = (data) => postData('/events', data);
 
   return (
-    <Main>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <h1>Add event</h1>
         <FormField
@@ -72,7 +71,6 @@ const EventForm = () => {
         />
         <SubmitButton type='submit' value='Save' />
       </Form>
-    </Main>
   );
 };
 

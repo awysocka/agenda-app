@@ -2,17 +2,18 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Container = styled.div`
+  position: fixed;
+  top: 0;
   background-color: ${({ theme }) => theme.colors.primary};
   width: 100%;
   height: 80px;
   display: flex;
   align-items: center;
   padding: 15px;
-  margin-bottom: 40px;
+  z-index: 2;
 
   @media ${({ theme }) => theme.device.tablet} {
     padding: 15px 36px;
-    margin-bottom: 60px;
   }
 `;
 

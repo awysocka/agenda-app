@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
 
     html {
         box-sizing: border-box;
+        height: 100%;
         font-size: 62.5%;
     }
 
@@ -17,7 +18,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        min-height: 100vh;
+        height: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
         font-family: 'Roboto', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
