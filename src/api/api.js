@@ -11,6 +11,11 @@ export const postData = (URL, data) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
-  })
-  .then((response) => response.json()).then(data => console.log(data))
+  }).then((response) => response.json());
+};
+
+export const deleteData = (URL, id) => {
+  return fetch(`${BASE_URL}${URL}/${id}`, {
+    method: 'DELETE',
+  });
 };

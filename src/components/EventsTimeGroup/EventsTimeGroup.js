@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
-
 import EventsTime from '../EventsTime/EventsTime';
-import EventsList from '../EventsList/EventsList';
+import AgendaEventsList from '../AgendaEventsList/AgendaEventsList';
 
 const EventsTimeGroup = ({ time, events, tagTitle, tags }) => {
   return (
     <div>
       <EventsTime time={time} />
-      <EventsList events={events} tagTitle={tagTitle} tags={tags} />
+      <AgendaEventsList events={events} tagTitle={tagTitle} tags={tags} />
     </div>
   );
 };

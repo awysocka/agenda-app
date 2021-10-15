@@ -18,10 +18,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        height: 100%;
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
+        min-height: 100vh;
+        ${'' /* display: flex;
+        flex-direction: column; */}
         font-family: 'Roboto', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;

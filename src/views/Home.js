@@ -8,8 +8,14 @@ import TagsList from '../components/TagsList/TagsList';
 import { getData } from '../api/api';
 import { removeDuplicates } from '../helpers/removeDuplicates';
 
+const Wrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
 
 const Main = styled.main`
+  width: 100%;
   max-width: 1024px;
   margin: 0 auto;
   padding: 150px 10px 40px;
@@ -17,7 +23,7 @@ const Main = styled.main`
   @media ${({ theme }) => theme.device.tablet} {
     padding: 150px 36px 60px;
   }
-`
+`;
 
 const AgendaInfo = styled.div`
   display: flex;
@@ -52,11 +58,11 @@ const Home = () => {
   });
 
   return (
-      <>
+    <>
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <div>
+        <Wrapper>
           <Header title={config.title} />
           <Main>
             <AgendaInfo>
@@ -66,9 +72,9 @@ const Home = () => {
             <Agenda events={eventsFilteredByDay} tagTitle={config.tagTitle} tags={tags} />
           </Main>
           <Footer />
-        </div>
+        </Wrapper>
       )}
-      </>
+    </>
   );
 };
 

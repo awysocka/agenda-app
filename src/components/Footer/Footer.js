@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
-  position: relative;
+const Container = styled.footer`
   background-color: ${({ theme }) => theme.colors.primary};
   width: 100%;
   height: 60px;
@@ -9,6 +8,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: ${({ theme }) => theme.colors.white};
   z-index: 2;
 `;

@@ -9,7 +9,7 @@ const StyledEventsList = styled.ul`
   align-items: flex-start;
 `;
 
-const EventsList = ({ events, tagTitle, tags }) => {
+const AgendaEventsList = ({ events, tagTitle, tags }) => {
   return (
     <StyledEventsList>
       {events?.map((event) => (
@@ -19,10 +19,10 @@ const EventsList = ({ events, tagTitle, tags }) => {
   );
 };
 
-EventsList.propTypes = {
+AgendaEventsList.propTypes = {
   events: PropTypes.arrayOf(PropTypes.object).isRequired,
   tagTitle: PropTypes.string,
   tags: PropTypes.PropTypes.arrayOf(PropTypes.object),
 };
 
-export default EventsList;
+export default AgendaEventsList;
