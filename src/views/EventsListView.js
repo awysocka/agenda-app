@@ -23,7 +23,6 @@ const EventsListView = () => {
     );
   };
 
-  console.log(events);
   return (
     <>
       {isLoading ? (

@@ -80,9 +80,9 @@ const AdminEventsList = ({ events, handleDelete }) => {
     history.push('/admin/new-event');
   };
 
-  const handleEditEvent = () => {
-    history.push('/admin/edit')
-  }
+  const handleEditEvent = (id) => {
+    history.push(`/admin/edit/${id}`);
+  };
 
   return (
     <Wrapper>
@@ -96,7 +96,7 @@ const AdminEventsList = ({ events, handleDelete }) => {
             <ListElement key={item.id}>
               <h3>{item.title}</h3>
               <IconsWrapper>
-                <Icon onClick={()=> handleEditEvent(item.id)}>
+                <Icon onClick={() => handleEditEvent(item.id)}>
                   <IoMdCreate />
                 </Icon>
                 <Icon onClick={() => handleDelete(item.id)}>
