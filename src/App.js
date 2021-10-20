@@ -6,6 +6,7 @@ import EventsList from './views/EventsListView';
 import AddEvent from './views/AddEvent';
 import EditEvent from './views/EditEvent';
 import { theme } from './styles/theme';
+import TagsListView from './views/TagsListView';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path='/admin/edit/:id'>
             <EditEvent />
+          </Route>
+          <Route path='/admin/tags'>
+            <TagsListView />
           </Route>
           <Route path='/admin'>
             <EventsList />
