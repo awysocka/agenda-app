@@ -93,6 +93,10 @@ const AdminTagsList = ({ tags, handleDelete }) => {
     history.push('/admin/tags/new-tag');
   };
 
+  const handleEditTag = (id) => {
+    history.push(`/admin/tags/edit/${id}`);
+  };
+
   return (
     <Wrapper>
       <Header>
@@ -106,7 +110,7 @@ const AdminTagsList = ({ tags, handleDelete }) => {
               <h3>{tag.name}</h3>
               <IconsWrapper>
                 <Icon>
-                  <IoMdCreate />
+                  <IoMdCreate onClick={() => handleEditTag(tag.id)} />
                 </Icon>
                 <Icon>
                   <IoTrashBinSharp onClick={() => handleDelete(tag.id)} />

@@ -2,12 +2,12 @@ import { useForm } from 'react-hook-form';
 import FormField from '../FormField/FormField';
 import { Form, SubmitButton, Error } from '../EventForm/EventForm.styles';
 
-const TagForm = ({ onSubmitAction }) => {
+const TagForm = ({ preloadedValues = null, onSubmitAction }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ mode: 'onTouched', reValidateMode: 'onChange' });
+  } = useForm({ mode: 'onTouched', reValidateMode: 'onChange', defaultValues: preloadedValues });
 
   const onSubmit = (data) => onSubmitAction(data);
 

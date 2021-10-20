@@ -8,6 +8,7 @@ import EditEvent from './views/EditEvent';
 import { theme } from './styles/theme';
 import TagsListView from './views/TagsListView';
 import AddTag from './views/AddTag';
+import EditTag from './views/EditTag';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path='/admin/tags/new-tag'>
             <AddTag />
+          </Route>
+          <Route path='/admin/tags/edit/:id'>
+            <EditTag />
           </Route>
           <Route path='/admin/tags'>
             <TagsListView />
