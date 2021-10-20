@@ -33,9 +33,3 @@ export const updateData = (URL, id, data) => {
     body: JSON.stringify(data),
   });
 };
-
-export const deleteTags = (URL, id) => {
-  return fetch(`${BASE_URL}${URL}/${id}`, {
-    method: 'DELETE',
-  });
-};

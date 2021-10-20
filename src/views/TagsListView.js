@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getData, deleteTags } from '../api/api';
+import { getData, deleteData } from '../api/api';
 import AdminLayout from '../layouts/AdminLayout/AdminLayout';
 import AdminTagsList from '../components/AdminTagsList/AdminTagsList';
 
@@ -16,7 +16,7 @@ const TagsListView = () => {
   }, []);
 
   const handleDelete = (id) => {
-    deleteTags('/tags', id).then(() =>
+    deleteData('/tags', id).then(() =>
       getData('/tags').then((data) => {
         setTags(data);
       }),

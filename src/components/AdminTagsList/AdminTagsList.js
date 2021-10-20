@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 import { IoTrashBinSharp } from 'react-icons/io5';
 import { IoMdCreate } from 'react-icons/io';
 
@@ -86,11 +87,17 @@ const Button = styled.button`
 `;
 
 const AdminTagsList = ({ tags, handleDelete }) => {
+  const history = useHistory();
+
+  const handleAddNewTag = () => {
+    history.push('/admin/tags/new-tag');
+  };
+
   return (
     <Wrapper>
       <Header>
         <h2>Tags List</h2>
-        <Button>Add</Button>
+        <Button onClick={handleAddNewTag}>Add</Button>
       </Header>
       <ul>
         {tags.length !== 0 ? (
