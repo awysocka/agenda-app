@@ -32,6 +32,7 @@ const ListElement = styled.li`
     margin-right: 10px;
     position: relative;
     margin-left: 30px;
+    font-size: 1.8rem;
 
     ::before {
       background: ${(props) => props.tagColor};

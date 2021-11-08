@@ -9,6 +9,8 @@ import { theme } from './styles/theme';
 import TagsListView from './views/TagsListView';
 import AddTag from './views/AddTag';
 import EditTag from './views/EditTag';
+import Config from './views/Config';
+import ConfigEdit from './views/ConfigEdit';
 
 function App() {
   return (
@@ -30,6 +32,12 @@ function App() {
           </Route>
           <Route path='/admin/tags'>
             <TagsListView />
+          </Route>
+          <Route path='/admin/config/edit'>
+            <ConfigEdit />
+          </Route>
+          <Route path='/admin/config'>
+            <Config />
           </Route>
           <Route path='/admin'>
             <EventsList />
