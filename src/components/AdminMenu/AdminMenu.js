@@ -1,4 +1,4 @@
-import { Wrapper, Navigation } from './AdminMenu.styles';
+import { Wrapper, Navigation, StyledLink } from './AdminMenu.styles';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 const AdminMenu = ({ open, setOpen }) => {
@@ -12,9 +12,15 @@ const AdminMenu = ({ open, setOpen }) => {
         <BurgerMenu open={open} setOpen={setOpen} handleClick={handleClick} />
         <Navigation>
           <ul>
-            <li>Events list</li>
-            <li>Tags</li>
-            <li>Configuration</li>
+            <li>
+              <StyledLink to='/admin'>Events list</StyledLink>
+            </li>
+            <li>
+              <StyledLink to='/admin/tags'>Tags</StyledLink>
+            </li>
+            <li>
+              <StyledLink to='/admin/config'>Configuration</StyledLink>
+            </li>
           </ul>
         </Navigation>
       </Wrapper>

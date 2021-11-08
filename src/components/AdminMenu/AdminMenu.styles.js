@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -30,5 +31,16 @@ export const Navigation = styled.nav`
 
   li:not(:last-child) {
     border-bottom: 1px solid ${({ theme }) => theme.colors.darkGrey};
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.colors.darkGrey};
+  transition: 0.2s color ease;
+
+  @media ${({ theme }) => theme.device.touchable} {
+    &:hover {
+      color: ${({ theme }) => theme.colors.primaryDark};
+    }
   }
 `;
