@@ -1,12 +1,17 @@
 import { useHistory } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 import TagForm from '../components/TagForm/TagForm';
 import AdminLayout from '../layouts/AdminLayout/AdminLayout';
 import { postData } from '../api/api';
 
 const AddTag = () => {
+  const { getAccessTokenSilently } = useAuth0();
   const history = useHistory();
 
-  const handleAddTag = (data) => postData('/tags', data).then(() => history.push('/admin/tags'));
+  const handleAddTag = (data) =>
+    getAccessTokenSilently()
+      .then((token) => postData('/tags', data, token))
+      .then(() => history.push('/admin/tags'));
 
   return (
     <AdminLayout>

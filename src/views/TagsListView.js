@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { getData, deleteData } from '../api/api';
+import { useAuth0 } from '@auth0/auth0-react';
 import AdminLayout from '../layouts/AdminLayout/AdminLayout';
 import AdminTagsList from '../components/AdminTagsList/AdminTagsList';
+import { getData, deleteData } from '../api/api';
 
 const TagsListView = () => {
   const [tags, setTags] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const { getAccessTokenSilently } = useAuth0();
 
   useEffect(() => {
     getData('/tags')
@@ -16,11 +19,13 @@ const TagsListView = () => {
   }, []);
 
   const handleDelete = (id) => {
-    deleteData('/tags', id).then(() =>
-      getData('/tags').then((data) => {
-        setTags(data);
-      }),
-    );
+    getAccessTokenSilently()
+      .then((token) => deleteData('/tags', id, token))
+      .then(() =>
+        getData('/tags').then((data) => {
+          setTags(data);
+        }),
+      );
   };
 
   return (

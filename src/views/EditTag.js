@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 import AdminLayout from '../layouts/AdminLayout/AdminLayout';
 import TagForm from '../components/TagForm/TagForm';
 import { updateData, getSingleData } from '../api/api';
 
 const EditTag = () => {
   const [preloadedValues, setPreloadedValues] = useState(null);
+  const { getAccessTokenSilently } = useAuth0();
   const { id } = useParams();
   const history = useHistory();
 
@@ -14,7 +16,9 @@ const EditTag = () => {
   }, [id]);
 
   const handleUpdateTag = (data) => {
-    updateData('/tags', id, data).then(() => history.push('/admin/tags'));
+    getAccessTokenSilently()
+      .then((token) => updateData('/tags', id, data, token))
+      .then(() => history.push('/admin/tags'));
   };
 
   return (
