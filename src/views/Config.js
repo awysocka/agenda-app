@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { IoMdCreate } from 'react-icons/io';
 import { useHistory } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development';
 import { getData } from '../api/api';
 import AdminLayout from '../layouts/AdminLayout/AdminLayout';
 
