@@ -1,8 +1,9 @@
 import { useForm } from 'react-hook-form';
+import PropTypes from 'prop-types';
 import FormField from '../FormField/FormField';
 import { Form, SubmitButton, Error } from '../EventForm/EventForm.styles';
 
-const ConfigForm = ({preloadedValues = null, onSubmitAction}) => {
+const ConfigForm = ({ preloadedValues = null, onSubmitAction }) => {
   const {
     register,
     handleSubmit,
@@ -41,6 +42,11 @@ const ConfigForm = ({preloadedValues = null, onSubmitAction}) => {
       <SubmitButton type='submit' value='Save' />
     </Form>
   );
+};
+
+ConfigForm.propTypes = {
+  preloadedValues: PropTypes.object,
+  onSubmitAction: PropTypes.func,
 };
 
 export default ConfigForm;

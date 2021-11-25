@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Button, ArrowDown, ArrowUp } from './ExpandableElement.styles';
 
 const ExpandableElement = ({ header, children }) => {
@@ -16,6 +17,11 @@ const ExpandableElement = ({ header, children }) => {
       {active && <div>{children}</div>}
     </>
   );
+};
+
+ExpandableElement.propTypes = {
+  header: PropTypes.node,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 export default ExpandableElement;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import SelectElement from '../SelectElement/SelectElement';
 import { Label, Input, Textarea } from './FormField.styles';
 
@@ -30,5 +31,18 @@ const FormField = ({
     )}
   </>
 );
+
+FormField.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
+  type: PropTypes.string,
+  register: PropTypes.func,
+  registerOptions: PropTypes.object,
+  isTextarea: PropTypes.bool,
+  isSelect: PropTypes.bool,
+  options: PropTypes.array,
+  placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
+  control: PropTypes.object,
+};
 
 export default FormField;

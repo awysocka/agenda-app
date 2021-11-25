@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { IoTrashBinSharp } from 'react-icons/io5';
 import { IoMdCreate } from 'react-icons/io';
 import { Wrapper, Header, ListElement, IconsWrapper, Icon, Button } from './AdminTagsList.styles';
@@ -41,6 +42,11 @@ const AdminTagsList = ({ tags, handleDelete }) => {
       </ul>
     </Wrapper>
   );
+};
+
+AdminTagsList.propsTypes = {
+  tags: PropTypes.arrayOf(PropTypes.object).isRequired,
+  handleDelete: PropTypes.func,
 };
 
 export default AdminTagsList;

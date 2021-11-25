@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { getData } from '../../api/api';
 import FormField from '../FormField/FormField';
 import { Form, SubmitButton, Error } from './EventForm.styles';
@@ -72,6 +73,11 @@ const EventForm = ({ preloadedValues = null, onSubmitAction }) => {
       <SubmitButton type='submit' value='Save' />
     </Form>
   );
+};
+
+EventForm.propTypes = {
+  preloadedValues: PropTypes.arrayOf(PropTypes.object),
+  onSubmitAction: PropTypes.func,
 };
 
 export default EventForm;

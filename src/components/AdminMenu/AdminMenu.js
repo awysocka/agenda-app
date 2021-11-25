@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Wrapper, Navigation, StyledLink } from './AdminMenu.styles';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
@@ -26,6 +27,11 @@ const AdminMenu = ({ open, setOpen }) => {
       </Wrapper>
     </>
   );
+};
+
+AdminMenu.propTypes = {
+  open: PropTypes.bool,
+  setOpen: PropTypes.func,
 };
 
 export default AdminMenu;

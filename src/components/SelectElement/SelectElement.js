@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Controller } from 'react-hook-form';
 import { ThemeContext } from 'styled-components';
 import Select, { components } from 'react-select';
+import PropTypes from 'prop-types';
 import { IoChevronDownOutline } from 'react-icons/io5';
 import { IoChevronUpOutline } from 'react-icons/io5';
 
@@ -76,6 +77,13 @@ const SelectElement = ({ options, placeholder, control, name }) => {
       )}
     />
   );
+};
+
+SelectElement.propTypes = {
+  options: PropTypes.array,
+  placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
+  control: PropTypes.object,
+  name: PropTypes.string,
 };
 
 export default SelectElement;

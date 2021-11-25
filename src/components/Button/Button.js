@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledButton = styled.button`
   background-color: ${({ theme }) => theme.colors.lightGrey};
@@ -17,6 +18,11 @@ const StyledButton = styled.button`
 
 const Button = ({ children, onClick }) => {
   return <StyledButton onClick={onClick}>{children}</StyledButton>;
+};
+
+Button.propTypes = {
+  children: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default Button;
