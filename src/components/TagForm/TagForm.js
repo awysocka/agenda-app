@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import FormField from '../FormField/FormField';
 import { Form, SubmitButton, Error } from '../EventForm/EventForm.styles';
 
-const TagForm = ({ preloadedValues = null, onSubmitAction }) => {
+const TagForm = ({ preloadedValues = null, onSubmitAction, title }) => {
   const {
     register,
     handleSubmit,
@@ -14,7 +14,7 @@ const TagForm = ({ preloadedValues = null, onSubmitAction }) => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <h1>Add tag</h1>
+      <h1>{title}</h1>
       <FormField
         name='name'
         type='text'
@@ -30,7 +30,7 @@ const TagForm = ({ preloadedValues = null, onSubmitAction }) => {
 };
 
 TagForm.propTypes = {
-  preloadedValues: PropTypes.arrayOf(PropTypes.object),
+  preloadedValues: PropTypes.object,
   onSubmitAction: PropTypes.func,
 };
 

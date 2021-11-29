@@ -16,7 +16,7 @@ const AddEvent = () => {
 
   return (
     <AdminLayout>
-      <EventForm onSubmitAction={handleAddPost} />
+      <EventForm onSubmitAction={handleAddPost} title='Add Event' />
     </AdminLayout>
   );
 };

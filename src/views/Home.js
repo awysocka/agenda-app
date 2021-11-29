@@ -57,6 +57,10 @@ const Home = () => {
     return event.date === selectedDay;
   });
 
+  const eventsWithTimeInterval = eventsFilteredByDay.map((event) => {
+    return {...event, time: `${event.startTime} - ${event.endTime} `}
+  })
+
   return (
     <>
       {isLoading ? (
@@ -69,7 +73,7 @@ const Home = () => {
               <DaySelect onChange={setSelectedDay} value={selectedDay} options={days} />
               <TagsList tagsTitle={config.tagsTitle} tags={tags} />
             </AgendaInfo>
-            <Agenda events={eventsFilteredByDay} tagTitle={config.tagTitle} tags={tags} />
+            <Agenda events={eventsWithTimeInterval} tagTitle={config.tagTitle} tags={tags} />
           </Main>
           <Footer />
         </Wrapper>

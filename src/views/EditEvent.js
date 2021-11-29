@@ -24,7 +24,11 @@ const EditEvent = () => {
   return (
     <AdminLayout>
       {preloadedValues ? (
-        <EventForm onSubmitAction={handleUpdateEvent} preloadedValues={preloadedValues} />
+        <EventForm
+          onSubmitAction={handleUpdateEvent}
+          preloadedValues={preloadedValues}
+          title='Edit event'
+        />
       ) : (
         <div>Loading...</div>
       )}

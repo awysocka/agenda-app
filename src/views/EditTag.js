@@ -24,7 +24,11 @@ const EditTag = () => {
   return (
     <AdminLayout>
       {preloadedValues ? (
-        <TagForm onSubmitAction={handleUpdateTag} preloadedValues={preloadedValues} />
+        <TagForm
+          onSubmitAction={handleUpdateTag}
+          preloadedValues={preloadedValues}
+          title='Edit tag'
+        />
       ) : (
         <div>Loading...</div>
       )}

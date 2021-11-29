@@ -5,7 +5,7 @@ import { getData } from '../../api/api';
 import FormField from '../FormField/FormField';
 import { Form, SubmitButton, Error } from './EventForm.styles';
 
-const EventForm = ({ preloadedValues = null, onSubmitAction }) => {
+const EventForm = ({ preloadedValues = null, onSubmitAction, title }) => {
   const [tags, setTags] = useState([]);
   const {
     register,
@@ -26,7 +26,7 @@ const EventForm = ({ preloadedValues = null, onSubmitAction }) => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <h1>Add event</h1>
+      <h1>{title}</h1>
       <FormField
         name='date'
         type='date'
@@ -36,9 +36,16 @@ const EventForm = ({ preloadedValues = null, onSubmitAction }) => {
       />
       {errors.date && <Error>{errors.date.message}</Error>}
       <FormField
-        name='time'
-        type='text'
-        label='Time'
+        name='startTime'
+        type='time'
+        label='Start time'
+        register={register}
+        registerOptions={{ required: 'This is required' }}
+      />
+      <FormField
+        name='endTime'
+        type='time'
+        label='End time'
         register={register}
         registerOptions={{ required: 'This is required' }}
       />
@@ -76,7 +83,7 @@ const EventForm = ({ preloadedValues = null, onSubmitAction }) => {
 };
 
 EventForm.propTypes = {
-  preloadedValues: PropTypes.arrayOf(PropTypes.object),
+  preloadedValues: PropTypes.object,
   onSubmitAction: PropTypes.func,
 };
 

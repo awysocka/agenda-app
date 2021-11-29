@@ -15,7 +15,7 @@ const AddTag = () => {
 
   return (
     <AdminLayout>
-      <TagForm onSubmitAction={handleAddTag} />
+      <TagForm onSubmitAction={handleAddTag} title='Add new tag' />
     </AdminLayout>
   );
 };
